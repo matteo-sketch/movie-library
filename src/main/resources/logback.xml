@@ -1,0 +1,17 @@
+<configuration>
+
+    <!-- Appender per scrivere su file -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>movielibrary.log</file> <!-- Nome del file di log -->
+        <encoder>
+            <!-- Formato del log: Data, Thread, Livello, Logger, Messaggio -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Logger Radice: cattura tutti i log e li invia all'appender FILE -->
+    <root level="INFO">
+        <appender-ref ref="FILE" />
+    </root>
+
+</configuration>
